@@ -36,3 +36,7 @@ For example, with the following content:
   "indent": "    "
 }
 ```
+
+## Related syncpack issue
+
+https://github.com/JamieMason/syncpack/issues/313
