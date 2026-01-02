@@ -4,6 +4,6 @@
 	"features": {
 		"git": {
 			"enabled": true
-		},
+		}
 	}
 }
