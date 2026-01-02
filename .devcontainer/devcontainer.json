@@ -1,7 +1,9 @@
 {
   "name": "syncpack-alpha-precommit-bug",
-  "image": "oven/bun:latest",
+  "dockerComposeFile": "./docker-compose.yml",
   "service": "dev",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "./.devcontainer/post-create.sh",
   "features": {
     "git": {
       "enabled": true
@@ -11,6 +13,65 @@
       "installOhMyZsh": true,
       "installOhMyZshConfig": true,
       "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
+    "ghcr.io/devcontainers-extra/features/shfmt:1": {},
+    "ghcr.io/roul/devcontainer-features/vault:1": {},
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "bradlc.vscode-tailwindcss",
+        "charliermarsh.ruff",
+        "mkhl.shfmt",
+        "davidanson.vscode-markdownlint",
+        "redhat.vscode-yaml",
+        "vscode-icons-team.vscode-icons",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        },
+        "editor.defaultFormatter": "biomejs.biome",
+        "[typescript]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[css]": {
+          "editor.defaultFormatter": "biomejs.biome"
+        },
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "mkhl.shfmt"
+        },
+        "files.associations": {
+          ".env.*": "properties"
+        },
+        "files.watcherExclude": {
+          "**/routeTree.gen.ts": true
+        },
+        "search.exclude": {
+          "**/routeTree.gen.ts": true
+        },
+        "files.readonlyInclude": {
+          "**/routeTree.gen.ts": true
+        }
+      }
     }
   }
 }

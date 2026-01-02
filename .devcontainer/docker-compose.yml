@@ -1,0 +1,15 @@
+name: "syncpack-alpha-precommit-bug"
+
+services:
+  dev:
+    container_name: syncpack-alpha-precommit-bug-dev
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "5173:5173"
+      - "5174:5174"
+      - "80:80"
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
