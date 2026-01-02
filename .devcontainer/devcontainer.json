@@ -1,0 +1,16 @@
+{
+  "name": "syncpack-alpha-precommit-bug",
+  "image": "oven/bun:latest",
+  "service": "dev",
+  "features": {
+    "git": {
+      "enabled": true
+    },
+    "ghcr.io/devcontainers/features/common-utils": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "configureZshAsDefaultShell": true
+    }
+  }
+}
