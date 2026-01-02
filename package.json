@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "syncpack": "syncpack lint"
+    "syncpack": "syncpack lint && syncpack format --check"
   },
   "type": "module"
 }
